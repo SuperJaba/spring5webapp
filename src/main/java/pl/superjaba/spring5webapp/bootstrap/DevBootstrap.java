@@ -35,6 +35,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         Author author = new Author("Jhon", "Rambo");
         Book book = new Book("Unicorn", "15643");
+        book.setRedd(false);
 
         book.setPublisher(pub0);
         book.getAuthors().add(author);
@@ -47,6 +48,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         publisherRepository.save(pub1);
         Author author1 = new Author("Jacek", "Kononiwicz");
         Book book1 = new Book("Zaszyty komplex", "4897", pub1);
+        book1.setRedd(true);
         author1.getBooks().add(book1);
         book1.getAuthors().add(author1);
 
@@ -58,6 +60,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         publisherRepository.save(pub2);
         Author aut = new Author("Sebix", "Czar");
         Book boo = new Book("Nirwana", "2019", pub2);
+        boo.setRedd(true);
         aut.getBooks().add(boo);
         boo.getAuthors().add(aut);
         boo.getAuthors().add(new Author("Archaniol", "Michal"));

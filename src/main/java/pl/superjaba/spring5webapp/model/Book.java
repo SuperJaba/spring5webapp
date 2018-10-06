@@ -12,6 +12,7 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
+    private boolean isRedd;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id")
@@ -36,9 +37,10 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
+    public Book(String title, String isbn, boolean isRedd, Publisher publisher, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
+        this.isRedd = isRedd;
         this.publisher = publisher;
         this.authors = authors;
     }
@@ -46,6 +48,7 @@ public class Book {
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -96,12 +99,21 @@ public class Book {
         return Objects.hash(id);
     }
 
+    public boolean isRedd() {
+        return isRedd;
+    }
+
+    public void setRedd(boolean redd) {
+        isRedd = redd;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
+                ", isRedd=" + isRedd +
                 ", publisher=" + publisher +
                 ", authors=" + authors +
                 '}';
