@@ -1,11 +1,12 @@
 package pl.superjaba.spring5webapp.controllers;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.superjaba.spring5webapp.repositories.BookRepository;
 
-@Component
+@Controller
 public class BookController {
 
     private BookRepository bookRepository;

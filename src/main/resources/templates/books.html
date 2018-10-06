@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books list from spring</title>
+</head>
+<body>
+<h1>Books list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th>ISBN</th>
+        <th>Redd</th>
+    </tr>
+    <tr th:each="book:${books}">
+        <td th:text="${book.id}">123</td>
+        <td th:text="${book.title}">Armagagedon</td>
+        <td th:text="${book.publisher.name}">Jezdzcy apokalipsy</td>
+        <td th:text="${book.isbn}">666</td>
+        <!--<td th:text="${book.isRedd ? 'true' : 'false'}">false</td>-->
+        <span th:if="${book.isRedd}">
+        yes<i class="fa fa-bullseye fa-2x" style="color:green; text-align: center;" aria-hidden="true"></i>
+    </span>
+        <span th:if="${!book.isRedd}">
+        no<i class="fa fa-bullseye fa-2x"  style="text-align: center;" aria-hidden="true"></i>
+    </span>
+    </tr>
+
+</table>
+
+</body>
+</html>
