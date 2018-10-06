@@ -20,13 +20,7 @@
         <td th:text="${book.title}">Armagagedon</td>
         <td th:text="${book.publisher.name}">Jezdzcy apokalipsy</td>
         <td th:text="${book.isbn}">666</td>
-        <!--<td th:text="${book.isRedd ? 'true' : 'false'}">false</td>-->
-        <span th:if="${book.isRedd}">
-        yes<i class="fa fa-bullseye fa-2x" style="color:green; text-align: center;" aria-hidden="true"></i>
-    </span>
-        <span th:if="${!book.isRedd}">
-        no<i class="fa fa-bullseye fa-2x"  style="text-align: center;" aria-hidden="true"></i>
-    </span>
+        <td><input type="checkbox" name="mycheckbox" th:checked="${book.foo}" /></td>
     </tr>
 
 </table>
